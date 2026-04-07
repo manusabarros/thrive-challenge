@@ -1,6 +1,21 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import type { AppType } from "next/app";
+import { Roboto } from "next/font/google";
+import { GlobalStyle } from "@/styles/global";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+const roboto = Roboto({
+  subsets: ["latin"],
+});
+
+const queryClient = new QueryClient();
+
+const App: AppType = ({ Component, pageProps }) => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <GlobalStyle style={roboto.style} />
+      <Component {...pageProps} />
+    </QueryClientProvider>
+  );
+};
+
+export default App;
