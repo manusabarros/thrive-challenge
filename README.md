@@ -41,7 +41,7 @@ All required technologies were used: Next.js (pages router), TypeScript, styled-
 
 ### AI Usage
 
-I used [v0](https://v0.app/) to generate an initial UI layout as a visual reference, since design is not my strong suit and starting from a blank canvas tends to slow me down. All logic, architecture decisions, and final implementation were written by me.
+I used [v0](https://v0.app/) to generate an initial UI layout as a visual reference, since design is not my strong suit and starting from a blank canvas tends to slow me down. You can view the original design and the prompts I used [here](https://v0.app/chat/rick-and-morty-app-fnedgT1EcvQ). All logic, architecture decisions, and final implementation were written by me.
 
 ### What I Would Improve for Production
 
