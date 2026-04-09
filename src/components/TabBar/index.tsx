@@ -1,7 +1,7 @@
 import { Dispatch, FC, SetStateAction } from "react";
 import { MapPin, Users } from "lucide-react";
-import { Container, Tab } from "@/styles/TabBar";
 import { Tab as TabType } from "@/types";
+import { Container, Tab } from "./styles";
 
 const TabBar: FC<{
   activeTab: TabType;

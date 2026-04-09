@@ -1,6 +1,6 @@
 import type { AppType } from "next/app";
 import { Roboto } from "next/font/google";
-import { GlobalStyle } from "@/styles/global";
+import { GlobalStyle } from "./global.styles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const roboto = Roboto({

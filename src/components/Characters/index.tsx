@@ -1,8 +1,7 @@
 import { FC } from "react";
+import useFetch from "@/hooks/useFetch";
 import Image from "next/image";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { Character } from "@/types";
+import { Character, ListResponse } from "@/types";
 import {
   Badge,
   Card,
@@ -11,23 +10,19 @@ import {
   Info,
   Name,
   Species,
-} from "@/styles/Characters";
+} from "./styles";
 
 const Characters: FC = () => {
-  const { data: characters } = useQuery<Character[]>({
-    queryKey: ["characters"],
-    queryFn: () =>
-      axios
-        .get("https://rickandmortyapi.com/api/character")
-        .then(({ data }) => data.results),
-    staleTime: Infinity,
-  });
+  const { data } = useFetch<ListResponse<Character>>(
+    ["characters"],
+    "character",
+  );
 
-  if (!characters) return null;
+  if (!data) return null;
 
   return (
     <Container>
-      {characters.map((character) => (
+      {data.results.map((character) => (
         <Card>
           <ImageContainer>
             <Badge $status={character.status}>{character.status}</Badge>
