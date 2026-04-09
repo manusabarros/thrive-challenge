@@ -1,6 +1,8 @@
 import { FC } from "react";
+import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { Character } from "@/types";
 import {
   Badge,
   Card,
@@ -10,16 +12,6 @@ import {
   Name,
   Species,
 } from "@/styles/Characters";
-import Image from "next/image";
-
-export type Status = "Alive" | "Dead" | "unknown";
-
-interface Character {
-  name: string;
-  status: Status;
-  species: string;
-  image: string;
-}
 
 const Characters: FC = () => {
   const { data: characters } = useQuery<Character[]>({

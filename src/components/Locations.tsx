@@ -1,13 +1,9 @@
 import { FC } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { Card, Container, Icon, Info, Name, Type } from "@/styles/Locations";
 import { MapPin } from "lucide-react";
-
-interface Location {
-  name: string;
-  type: string;
-}
+import { Location } from "@/types";
+import { Card, Container, Icon, Info, Name, Type } from "@/styles/Locations";
 
 const Locations: FC = () => {
   const { data: locations } = useQuery<Location[]>({
