@@ -6,8 +6,8 @@ import { Card, Container, Icon, Info, Name, Type } from "./styles";
 
 const Locations: FC = () => {
   const { data } = useFetch<ListResponse<Location>>(
-    ["characters"],
-    "character",
+    ["locations"],
+    "location",
   );
 
   if (!data) return null;
