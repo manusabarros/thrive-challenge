@@ -23,7 +23,7 @@ const Characters: FC = () => {
   return (
     <Container>
       {data.results.map((character) => (
-        <Card>
+        <Card key={character.id}>
           <ImageContainer>
             <Badge $status={character.status}>{character.status}</Badge>
             <Image src={character.image} alt={character.name} fill />

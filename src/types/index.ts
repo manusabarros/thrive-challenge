@@ -13,6 +13,7 @@ export type Tab = "characters" | "locations";
 export type Status = "Alive" | "Dead" | "unknown";
 
 export interface Character {
+  id: number;
   name: string;
   status: Status;
   species: string;
@@ -20,6 +21,7 @@ export interface Character {
 }
 
 export interface Location {
+  id: number;
   name: string;
   type: string;
 }

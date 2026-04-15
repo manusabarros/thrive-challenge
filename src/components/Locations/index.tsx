@@ -5,17 +5,14 @@ import { ListResponse, Location } from "@/types";
 import { Card, Container, Icon, Info, Name, Type } from "./styles";
 
 const Locations: FC = () => {
-  const { data } = useFetch<ListResponse<Location>>(
-    ["locations"],
-    "location",
-  );
+  const { data } = useFetch<ListResponse<Location>>(["locations"], "location");
 
   if (!data) return null;
 
   return (
     <Container>
       {data.results.map((location) => (
-        <Card>
+        <Card key={location.id}>
           <Icon>
             <MapPin />
           </Icon>
