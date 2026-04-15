@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
+import { QueryKey, useQuery } from "@tanstack/react-query";
 
-const useFetch = <T>(queryKey: readonly unknown[], path: string) =>
+const useFetch = <T>(queryKey: QueryKey, path: string) =>
   useQuery<T>({
     queryKey,
     queryFn: () =>
